@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рианна — Frontend Developer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        "fade-up": "fadeUp 0.8s ease-out forwards",
+                        "float": "float 3s ease-in-out infinite"
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            "0%": {
+                                opacity: "0",
+                                transform: "translateY(30px)"
+                            },
+                            "100%": {
+                                opacity: "1",
+                                transform: "translateY(0)"
+                            }
+                        },
+                        float: {
+                            "0%, 100%": {
+                                transform: "translateY(0)"
+                            },
+                            "50%": {
+                                transform: "translateY(-10px)"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #a78bfa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+    <!-- НАВИГАЦИЯ -->
+    <header class="fixed top-0 left-0 w-full z-50 glass">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <a href="#home" class="text-2xl font-bold gradient-text">
+                Рианна
+            </a>
+
+            <div class="hidden md:flex gap-8 text-slate-300">
+                <a href="#about" class="hover:text-white transition">Обо мне</a>
+                <a href="#skills" class="hover:text-white transition">Навыки</a>
+                <a href="#projects" class="hover:text-white transition">Проекты</a>
+                <a href="#contacts" class="hover:text-white transition">Контакты</a>
+            </div>
+
+            <a href="#contacts"
+               class="bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl transition">
+                Связаться
+            </a>
+        </nav>
+    </header>
+
+    <!-- ГЛАВНЫЙ БЛОК -->
+    <section id="home" class="min-h-screen flex items-center px-6 pt-24">
+        <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="animate-fade-up">
+                <p class="text-violet-400 text-lg mb-4">
+                    Привет! Меня зовут
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    Рианна
+                </h1>
+
+                <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">
+                    Начинающий
+                    <span class="gradient-text font-bold">
+                        Frontend-разработчик
+                    </span>
+                </h2>
+
+                <p class="text-slate-400 text-lg leading-8 mb-8 max-w-xl">
+                    Создаю современные, удобные и адаптивные
+                    веб-сайты. Изучаю HTML, CSS, JavaScript
+                    и Tailwind CSS и постоянно развиваю
+                    свои навыки.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects"
+                       class="bg-violet-600 hover:bg-violet-700 px-7 py-3 rounded-xl font-semibold transition">
+                        Мои проекты
+                    </a>
+
+                    <a href="#contacts"
+                       class="border border-slate-600 hover:border-violet-500 px-7 py-3 rounded-xl transition">
+                        Контакты
+                    </a>
+                </div>
+            </div>
+
+            <!-- ЧЕТЫРЁХКОНЕЧНАЯ ЗВЕЗДА -->
+            <div class="flex justify-center animate-float">
+                <div class="w-72 h-72 md:w-96 md:h-96 rounded-full
+                            bg-gradient-to-br from-violet-600 to-sky-500
+                            flex items-center justify-center shadow-2xl">
+
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full
+                                bg-slate-900 flex items-center justify-center">
+
+                        <svg class="w-28 h-28 md:w-40 md:h-40 text-white"
+                             viewBox="0 0 120 120"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             aria-label="Четырёхконечная звезда"
+                             role="img">
+                            <path
+                                d="M60 5 C55 39 52 49 42 54
+                                   C32 59 18 59 5 60
+                                   C18 61 32 61 42 66
+                                   C52 71 55 81 60 115
+                                   C65 81 68 71 78 66
+                                   C88 61 102 61 115 60
+                                   C102 59 88 59 78 54
+                                   C68 49 65 39 60 5 Z"
+                                stroke="currentColor"
+                                stroke-width="3.5"
+                                stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section id="about" class="py-24 px-6 bg-slate-900/60">
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="text-4xl font-bold text-center mb-4">
+                Обо <span class="gradient-text">мне</span>
+            </h2>
+
+            <p class="text-center text-slate-400 mb-12">
+                Немного информации обо мне
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-5">Кто я?</h3>
+
+                    <p class="text-slate-300 leading-8">
+                        Меня зовут Рианна. Я начинающий
+                        фронтенд-разработчик, который изучает
+                        создание сайтов и веб-приложений.
+                        Мне нравится работать с интерфейсом,
+                        экспериментировать с дизайном и
+                        создавать удобные страницы.
+                    </p>
+
+                    <p class="text-slate-300 leading-8 mt-4">
+                        Сейчас я продолжаю изучать современные
+                        технологии фронтенд-разработки и
+                        работать над собственными проектами.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-5">
+
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <h3 class="font-bold">Frontend</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Разработка интерфейсов
+                        </p>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <h3 class="font-bold">UI Design</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Современный дизайн
+                        </p>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <h3 class="font-bold">Адаптивность</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Телефон и компьютер
+                        </p>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <h3 class="font-bold">Развитие</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Постоянно учусь
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НАВЫКИ -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="text-4xl font-bold text-center mb-4">
+                Мои <span class="gradient-text">навыки</span>
+            </h2>
+
+            <p class="text-center text-slate-400 mb-12">
+                Технологии, которые я изучаю
+            </p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="glass rounded-2xl p-7 hover:-translate-y-2 transition">
+                    <h3 class="text-xl font-bold mb-2">HTML</h3>
+                    <p class="text-slate-400">
+                        Создание структуры веб-страниц.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-7 hover:-translate-y-2 transition">
+                    <h3 class="text-xl font-bold mb-2">CSS</h3>
+                    <p class="text-slate-400">
+                        Стилизация и адаптивная вёрстка.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-7 hover:-translate-y-2 transition">
+                    <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+                    <p class="text-slate-400">
+                        Интерактивность и логика сайтов.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-7 hover:-translate-y-2 transition">
+                    <h3 class="text-xl font-bold mb-2">Tailwind CSS</h3>
+                    <p class="text-slate-400">
+                        Быстрая современная стилизация.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРОЕКТЫ -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/60">
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="text-4xl font-bold text-center mb-4">
+                Мои <span class="gradient-text">проекты</span>
+            </h2>
+
+            <p class="text-center text-slate-400 mb-12">
+                Примеры моих работ
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- ПРОЕКТ 1: ПОРТФОЛИО -->
+                <article class="glass rounded-2xl overflow-hidden hover:-translate-y-2 transition">
+
+                    <div class="h-40 bg-gradient-to-br from-violet-600 to-sky-500
+                                flex items-center justify-center">
+
+                        <svg class="w-20 h-20 text-white"
+                             viewBox="0 0 120 120"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             aria-label="Четырёхконечная звезда"
+                             role="img">
+                            <path
+                                d="M60 5 C55 39 52 49 42 54
+                                   C32 59 18 59 5 60
+                                   C18 61 32 61 42 66
+                                   C52 71 55 81 60 115
+                                   C65 81 68 71 78 66
+                                   C88 61 102 61 115 60
+                                   C102 59 88 59 78 54
+                                   C68 49 65 39 60 5 Z"
+                                stroke="currentColor"
+                                stroke-width="3.5"
+                                stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">
+                            Портфолио
+                        </h3>
+
+                        <p class="text-slate-400 mb-5">
+                            Современный адаптивный сайт-портфолио
+                            фронтенд-разработчика.
+                        </p>
+
+                        <a href="#home"
+                           class="text-violet-400 hover:text-violet-300">
+                            Открыть портфолио →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ПРОЕКТ 2: COMICBOX -->
+                <article class="glass rounded-2xl overflow-hidden hover:-translate-y-2 transition">
+
+                    <div class="h-40 bg-gradient-to-br from-pink-600 to-purple-600
+                                flex items-center justify-center">
+                        <span class="text-5xl font-bold">UI</span>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">
+                            ComicBox
+                        </h3>
+
+                        <p class="text-slate-400 mb-5">
+                            Одностраничный сайт с адаптивной вёрсткой.
+                        </p>
+
+                        <a href="https://stackblitzstarters2evvj1q1-znkh--8080--50ccefb0.local-corp.webcontainer.io/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-violet-400 hover:text-violet-300">
+                            Открыть ComicBox →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ПРОЕКТ 3: GITHUB -->
+                <article class="glass rounded-2xl overflow-hidden hover:-translate-y-2 transition">
+
+                    <div class="h-40 bg-gradient-to-br from-cyan-600 to-blue-600
+                                flex items-center justify-center">
+                        <span class="text-5xl font-bold">WEB</span>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">
+                            GitHub Projects
+                        </h3>
+
+                        <p class="text-slate-400 mb-5">
+                            Мои учебные проекты и работы по веб-разработке.
+                        </p>
+
+                        <a href="https://github.com/makenovarianna"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-violet-400 hover:text-violet-300">
+                            Открыть GitHub →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <h2 class="text-4xl font-bold mb-4">
+                Давайте <span class="gradient-text">общаться</span>
+            </h2>
+
+            <p class="text-slate-400 mb-12">
+                Связаться со мной можно через социальные сети
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-6">
+
+                <!-- TELEGRAM -->
+                <a href="https://t.me/Triiipchik"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="glass rounded-2xl p-7 hover:-translate-y-2 hover:border-violet-500 transition">
+                    <h3 class="text-xl font-bold">Telegram</h3>
+                    <p class="text-slate-400 mt-2">Написать мне</p>
+                </a>
+
+                <!-- WHATSAPP -->
+                <a href="https://wa.me/qr/O6OCWCOL5BG6N1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="glass rounded-2xl p-7 hover:-translate-y-2 hover:border-green-500 transition">
+                    <h3 class="text-xl font-bold">WhatsApp</h3>
+                    <p class="text-slate-400 mt-2">Написать мне</p>
+                </a>
+
+                <!-- GITHUB -->
+                <a href="https://github.com/makenovarianna"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="glass rounded-2xl p-7 hover:-translate-y-2 hover:border-slate-400 transition">
+                    <h3 class="text-xl font-bold">GitHub</h3>
+                    <p class="text-slate-400 mt-2">Мои проекты</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="border-t border-slate-800 py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-400">
+                © 2026 Рианна. Начинающий Frontend-разработчик.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
